@@ -31,7 +31,7 @@ module ViteRails::TagHelpers
   end
 
   # Public: Renders a <script> tag for the specified Vite entrypoints.
-  def vite_javascript_tag(*names,
+  def vite_javascript_tags(*names,
                           type: 'module',
                           asset_type: :javascript,
                           skip_preload_tags: true,
