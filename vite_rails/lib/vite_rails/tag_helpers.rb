@@ -86,8 +86,8 @@ private
   def vite_preload_tag(*sources, crossorigin:, **options)
     sources.map { |source|
       href = path_to_asset(source)
-      try(:request).try(:send_early_hints, 'Link' => %(<#{ href }>; rel=modulepreload; as=script; crossorigin=#{ crossorigin }))
-      tag.link(rel: 'modulepreload', href: href, as: 'script', crossorigin: crossorigin, **options)
+      try(:request).try(:send_early_hints, 'Link' => %(<#{ href }>; as=script; crossorigin=#{ crossorigin }))
+      tag.link(href: href, as: 'script', crossorigin: crossorigin, **options)
     }.join("\n").html_safe
   end
 end
